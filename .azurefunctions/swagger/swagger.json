@@ -1,0 +1,97 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "title": "Puzzlepart Teams Functions",
+    "description": "Azure Functions for basic provisioning of Microsoft Teams",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Puzzlepart Assist 365",
+      "email": "assist365@puzzlepart.com",
+      "url": "https://www.puzzlepart.com"
+    }
+  },
+  "host": "nicconf2018.azurewebsites.net",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/CreateTeam": {
+      "post": {
+        "operationId": "/api/CreateTeam/post",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Team",
+            "description": "The Team to create",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "name",
+                "description",
+                "owner"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "x-ms-visibility": "important"
+                },
+                "description": {
+                  "type": "string",
+                  "x-ms-visibility": "important"
+                },
+                "owner": {
+                  "type": "string",
+                  "x-ms-visibility": "important"
+                }
+              }
+            }
+          }
+        ],
+        "description": "Creates a Microsoft Team",
+        "responses": {
+          "200": {
+            "description": "Success operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "alias": {
+                  "type": "string"
+                },
+                "groupId": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyQuery": []
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "securityDefinitions": {
+    "apikeyQuery": {
+      "type": "apiKey",
+      "name": "code",
+      "in": "query"
+    }
+  }
+}
