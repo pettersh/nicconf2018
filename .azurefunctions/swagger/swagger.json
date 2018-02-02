@@ -18,7 +18,9 @@
   "paths": {
     "/api/CreateTeam": {
       "post": {
-        "operationId": "/api/CreateTeam/post",
+        "description": "Creates a Team - uses and outputs dynamic values",
+        "summary": "Creates a Team and adds requestor as owner",
+        "operationId": "CreateTeam",
         "produces": [
           "application/json"
         ],
@@ -60,7 +62,6 @@
             }
           }
         ],
-        "description": "Creates a Microsoft Team",
         "responses": {
           "200": {
             "description": "Success operation",
