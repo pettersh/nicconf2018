@@ -10,7 +10,7 @@
       "url": "https://www.puzzlepart.com"
     }
   },
-  "host": "https://nicconf2018-teams-functions.azurewebsites.net",
+  "host": "nicconf2018-teams-functions.azurewebsites.net",
   "basePath": "/",
   "schemes": [
     "https"
