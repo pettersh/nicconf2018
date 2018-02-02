@@ -15,8 +15,8 @@ Connect-MicrosoftTeams -Credential $credentials
 
 $team = New-Team -DisplayName $name -Description $description -Alias $alias -AccessType Private -AddCreatorAsMember $true
 
-Add-TeamUser -GroupId $team.GroupId -User $owner -Role Owner
-Add-TeamUser -GroupId $team.GroupId -User $owner -Role Member
+#Add-TeamUser -GroupId $team.GroupId -User $owner -Role Owner
+#Add-TeamUser -GroupId $team.GroupId -User $owner -Role Member
 
 #Set-TeamMemberSettings -GroupId $team.groupId -AllowCreateUpdateChannels $false -AllowDeleteChannels $false -AllowAddRemoveApps $false -AllowCreateUpdateRemoveTabs $false -AllowCreateUpdateRemoveConnectors $false
 
